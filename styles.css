@@ -53,6 +53,10 @@ body {
 
 
 .normal-size-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     font-size: 30px;
     border-radius: 100px;
     border-color: grey;
