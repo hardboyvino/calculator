@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    /* background-color: #1c1c1c; */
+}
+
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    height: 667px;
+    /* overflow: auto; */
+    /* background-color: black; */
+}
+
+#display-area {
+    position: relative;
+    height: 300px;
+    /* overflow: hidden; */
+    font-size: 50px;
+    color: white;
+    background-color: #1c1c1c;
+}
+
+
+#buttons-area {
+    background-color: #1c1c1c;
+    padding: 20px;
+}
+
+
+.calculator-display {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+.number-rows {
+    display: flex;
+    justify-content: space-between;  
+    /* flex-wrap: wrap; */
+    margin: -11.25px;
+}
+
+
+.normal-size-buttons {
+    font-size: 30px;
+    border-radius: 100px;
+    border-color: grey;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    height: 62.5px;
+    width: 62.5px;
+    text-align: center;
+    margin: 11.25px;
+}
+
+.large-size-buttons {
+    font-size: 35px;
+    border-radius: 100px;
+    border-color: grey;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    height: 62.5px;
+    width: 150px;
+    text-align: center;
+    margin: 11.25px;
+}
+
+.grey-buttons {
+    background-color: #505050;
+    color: white;
+}
+
+.orange-buttons {
+    background-color: #ff9500;
+    color: white;
+}
+
+.light-grey-buttons {
+    background-color: #d4d4d2;
+    color: black;
+}
