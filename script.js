@@ -5,6 +5,7 @@ let currentOperator = null;
 let result = null;
 let newCalculation = false;
 
+
 function updateDisplay() {
     // Select all the number buttons
     let numberButtons = document.querySelectorAll(".grey-buttons");
@@ -86,8 +87,48 @@ function calculateFinalResult() {
         }
         secondNumber = null;
         newCalculation = true;
+        console.log(result);
     } 
 }
+
+
+function negateResults() {
+    let negation = document.querySelector(".negate.normal-size-buttons.light-grey-buttons")
+
+    // Select the display div
+    let displayDiv = document.querySelector(".calculator-display");
+
+    negation.addEventListener("click", () => {
+        if (result != null) {
+            result = -1 * result;
+            displayDiv.innerText = result;
+        } else if (currentInput != "") {
+            currentInput = Number(currentInput);
+            currentInput = -1 * currentInput;
+            displayDiv.innerText = currentInput;
+        }
+    });
+}
+
+
+function percentageResults() {
+    let percentage = document.querySelector(".percentage.normal-size-buttons.light-grey-buttons")
+
+    // Select the display div
+    let displayDiv = document.querySelector(".calculator-display");
+
+    percentage.addEventListener("click", () => {
+        if (result != null) {
+            result /= 100;
+            displayDiv.innerText = result;
+        }else if (currentInput != "") {
+            currentInput = Number(currentInput);
+            currentInput /= 100;
+            displayDiv.innerText = currentInput;
+        }
+    });
+}
+
 
 function roundResult(result) {
     if (Number.isInteger(result)) {
@@ -144,3 +185,5 @@ updateDisplay();
 selectOperation();
 getClearButton();
 document.querySelector(".equal").addEventListener("click", calculateFinalResult);
+negateResults();
+percentageResults();
