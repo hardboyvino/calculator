@@ -2,7 +2,6 @@ let currentInput = "";
 let firstNumber = null;
 let secondNumber = null;
 let currentOperator = null;
-let olderOperator = null;
 let result = null;
 let newCalculation = false;
 
@@ -30,7 +29,6 @@ function updateDisplay() {
 
             // Display currentInput on screen
             displayDiv.innerText = currentInput;
-            console.log(`curentInput in updateDisplay ${currentInput}`);
         });
     });
 }
@@ -48,37 +46,20 @@ function selectOperation() {
         button.addEventListener("click", function(event) {
             // Get the value of the operator clicked
             let operator = event.target.innerText;
-            
-            console.log(`firstNumber before if statement ${firstNumber}`);
-            console.log(`operator before if statement ${operator}`);
-            console.log(`currentInput before if statement ${currentInput}`);
-            console.log(`currentOperator before if statement ${currentOperator}`);
-            console.log(`olderOperator before if statement ${olderOperator}`);
-
+  
             if (firstNumber == null) {
                 firstNumber = Number(currentInput);
-                // olderOperator = currentOperator;
                 currentOperator = operator;
                 currentInput = "";
-                console.log(`firstNumber in if statement ${firstNumber}`);
-                console.log(`currentOperator in if statement ${currentOperator}`);
-                console.log(currentInput);
                 displayDiv.innerText = firstNumber;
             } else if (!newCalculation) {
-                console.log(`firstNumber in else else statement ${firstNumber}`);
                 secondNumber = Number(currentInput);
-                console.log(`secondNumber in else else statement ${secondNumber}`);
                 result = operation(currentOperator, firstNumber, secondNumber);
                 secondNumber = null;
-                // olderOperator = currentOperator;
                 currentOperator = operator;
                 currentInput = "";
                 firstNumber = result
                 displayDiv.innerText = result;
-                console.log(`firstNumber in else else statement ${firstNumber}`);
-                console.log(`secondNumber in else else statement ${secondNumber}`);
-                console.log(`operator in else else statement ${currentOperator}`);
-                console.log(`result in else else statement ${result}`);
             } else {
                 currentOperator = operator;
                 newCalculation = false;
@@ -93,13 +74,10 @@ function calculateFinalResult() {
     if (firstNumber != null && currentInput != "") {
         secondNumber = Number(currentInput);
         let result = operation(currentOperator, firstNumber, secondNumber);
-        console.log(`operator in equal statement ${currentOperator}`);
 
         if (result === "Error") {
-            console.log(result);
             firstNumber = null;
             currentInput = "";
-            // currentOperator = null;
             document.querySelector(".calculator-display").textContent = "Error";
         } else {
             document.querySelector(".calculator-display").textContent = result;
@@ -108,13 +86,7 @@ function calculateFinalResult() {
         }
         secondNumber = null;
         newCalculation = true;
-        // currentOperator = null;
     } 
-    console.log(`firstNumber in equal statement ${firstNumber}`);
-    console.log(`secondNumber in equal statement ${secondNumber}`);
-    console.log(`operator in equal statement ${currentOperator}`);
-    console.log(`olderOperator in equal statement ${olderOperator}`);
-    console.log(`result in equal statement ${result}`);
 }
 
 function roundResult(result) {
@@ -165,11 +137,6 @@ function getClearButton () {
         currentOperator = null;
         result = null;
         displayDiv.innerText = currentInput;
-        console.log(`firstNumber in clear button ${firstNumber}`);
-        console.log(`secondNumber in clear button ${secondNumber}`);
-        console.log(`operator in clear button ${currentOperator}`);
-        console.log(`operator in clear button ${currentInput}`);
-        console.log(`result in clear button ${result}`);
     })
 }
 
