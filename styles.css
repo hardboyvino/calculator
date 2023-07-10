@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: auto;
-    /* background-color: #1c1c1c; */
+    background-color: #1c1c1c;
 }
 
 
@@ -95,4 +95,27 @@ body {
 .light-grey-buttons {
     background-color: #d4d4d2;
     color: black;
+}
+
+.equal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 100px;
+    border-color: grey;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    height: 62.5px;
+    width: 62.5px;
+    text-align: center;
+    margin: 11.25px;
+    background-color: #ff9500;
+    color: white;
+}
+
+button:active {
+    background-color: lightgray;
 }
